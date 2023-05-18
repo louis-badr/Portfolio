@@ -1,7 +1,8 @@
 import 'dart:math' as math;
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'widgets/background.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Portfolio - Louis Badr',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(),
+        '/projects': (context) => const MyProjects(),
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
@@ -43,7 +49,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MyHomePage(),
     );
   }
 }
@@ -69,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: const Size(double.infinity, double.infinity),
             ),
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               child: Stack(
                 children: [
                   Align(
@@ -84,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         onPressed: () {
-                          print('hi');
+                          Navigator.of(context).push(createRoute());
                         },
                         child: Text(
                           'Projects',
@@ -325,36 +330,29 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class GridPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    // Vertical line
-    Paint paint_0 = Paint()
-      ..color = const Color(0xFFF4EFDC)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
-
-    Path path_0 = Path();
-    path_0.moveTo(size.width - 17, 0);
-    path_0.lineTo(size.width - 17, size.height - 17);
-
-    canvas.drawPath(path_0, paint_0);
-
-    // Horizontal line
-    Paint paint_1 = Paint()
-      ..color = const Color(0xFFF4EFDC)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
-
-    Path path_1 = Path();
-    path_1.moveTo(0, size.height - 17);
-    path_1.lineTo(size.width - 17, size.height - 17);
-
-    canvas.drawPath(path_1, paint_1);
-  }
+class MyProjects extends StatelessWidget {
+  const MyProjects({super.key});
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
+  Widget build(BuildContext context) {
+    return const Scaffold();
   }
+}
+
+Route createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => const MyProjects(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(-1, 0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }
