@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Stack(
           children: [
             CustomPaint(
-              painter: GridPainter(),
+              painter: BottomRightBackground(),
               size: const Size(double.infinity, double.infinity),
             ),
             Align(
@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         ),
                                                       ),
                                                       SelectableText(
-                                                        '1.0',
+                                                        '0.1',
                                                         style: Theme.of(context)
                                                             .textTheme
                                                             .titleMedium,

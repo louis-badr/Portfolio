@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/background.dart';
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
@@ -8,6 +9,10 @@ class GalleryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
+        CustomPaint(
+          painter: BottomLeftBackground(),
+          size: const Size(double.infinity, double.infinity),
+        ),
         Align(
           alignment: Alignment.centerRight,
           child: Transform.rotate(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/background.dart';
 
 class AboutMeScreen extends StatelessWidget {
   const AboutMeScreen({super.key});
@@ -6,11 +7,15 @@ class AboutMeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Stack(
-          children: [
-            Align(
+      body: Stack(
+        children: [
+          CustomPaint(
+            painter: CenterRightBackground(),
+            size: const Size(double.infinity, double.infinity),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Align(
               alignment: Alignment.bottomCenter,
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
@@ -28,8 +33,8 @@ class AboutMeScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
