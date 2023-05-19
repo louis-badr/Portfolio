@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'screens/aboutme.dart';
 import 'screens/gallery.dart';
 import 'screens/home.dart';
 import 'screens/projects.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           background: const Color(0xFF04071B),
         ),
         textTheme: const TextTheme(
-          titleLarge: TextStyle(
+          displayLarge: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Color(0xFFF4EFDC),
@@ -43,6 +45,10 @@ class MyApp extends StatelessWidget {
           ),
           titleSmall: TextStyle(
             fontSize: 12,
+            color: Color(0xFFF4EFDC),
+          ),
+          titleLarge: TextStyle(
+            fontSize: 60,
             color: Color(0xFFF4EFDC),
           ),
           displayMedium: TextStyle(

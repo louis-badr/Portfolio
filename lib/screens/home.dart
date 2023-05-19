@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       "Louis' Portfolio",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .titleLarge,
+                                          .displayLarge,
                                     ),
                                   ],
                                 ),

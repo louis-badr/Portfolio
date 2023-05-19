@@ -15,23 +15,31 @@ class AboutMeScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(
-                    color: Color(0xFF2E45ED),
-                    width: 2,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      side: const BorderSide(
+                        color: Color(0xFF2E45ED),
+                        width: 2,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/');
+                    },
+                    child: Text(
+                      'Home',
+                      style: Theme.of(context).textTheme.displayMedium,
+                    ),
                   ),
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/');
-                },
-                child: Text(
-                  'Home',
-                  style: Theme.of(context).textTheme.displayMedium,
+                Text(
+                  'Projects',
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
-              ),
+              ],
             ),
           ),
         ],
