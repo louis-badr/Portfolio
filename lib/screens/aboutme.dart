@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/screens/home.dart';
 import 'package:portfolio/widgets/background.dart';
 
 class AboutMeScreen extends StatelessWidget {
@@ -27,7 +29,16 @@ class AboutMeScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/');
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.bottomToTopJoined,
+                          child: const HomeScreen(),
+                          childCurrent: this,
+                          duration: const Duration(milliseconds: 500),
+                          reverseDuration: const Duration(milliseconds: 500),
+                        ),
+                      );
                     },
                     child: Text(
                       'Home',
@@ -36,7 +47,7 @@ class AboutMeScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Projects',
+                  'About Me',
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],

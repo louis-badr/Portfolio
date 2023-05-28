@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'screens/aboutme.dart';
-import 'screens/gallery.dart';
-import 'screens/home.dart';
-import 'screens/projects.dart';
+import 'package:portfolio/screens/home.dart';
 
 void main() {
   usePathUrlStrategy();
@@ -18,13 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Portfolio - Louis Badr',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/projects': (context) => const ProjectsScreen(),
-        '/gallery': (context) => const GalleryScreen(),
-        '/aboutme': (context) => const AboutMeScreen(),
-      },
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

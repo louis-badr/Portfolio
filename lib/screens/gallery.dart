@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/widgets/background.dart';
 
 class GalleryScreen extends StatelessWidget {
@@ -25,7 +27,16 @@ class GalleryScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/projects');
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.rightToLeftJoined,
+                    child: const ProjectsScreen(),
+                    childCurrent: this,
+                    duration: const Duration(milliseconds: 500),
+                    reverseDuration: const Duration(milliseconds: 500),
+                  ),
+                );
               },
               child: Text(
                 'Projects',

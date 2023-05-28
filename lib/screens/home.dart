@@ -2,6 +2,9 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/screens/aboutme.dart';
+import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/widgets/background.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,7 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/projects');
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.leftToRightJoined,
+                        child: const ProjectsScreen(),
+                        childCurrent: widget,
+                        duration: const Duration(milliseconds: 500),
+                        reverseDuration: const Duration(milliseconds: 500),
+                      ),
+                    );
                   },
                   child: Text(
                     'Projects',
@@ -59,7 +71,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/aboutme');
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.topToBottomJoined,
+                            child: const AboutMeScreen(),
+                            childCurrent: widget,
+                            duration: const Duration(milliseconds: 500),
+                            reverseDuration: const Duration(milliseconds: 500),
+                          ),
+                        );
                       },
                       child: Text(
                         'About me',

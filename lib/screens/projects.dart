@@ -1,5 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/screens/gallery.dart';
+import 'package:portfolio/screens/home.dart';
 import 'package:portfolio/widgets/background.dart';
 
 class ProjectsScreen extends StatelessWidget {
@@ -26,7 +29,16 @@ class ProjectsScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeftJoined,
+                      child: const HomeScreen(),
+                      childCurrent: this,
+                      duration: const Duration(milliseconds: 500),
+                      reverseDuration: const Duration(milliseconds: 500),
+                    ),
+                  );
                 },
                 child: Text(
                   'Home',
@@ -47,7 +59,16 @@ class ProjectsScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/gallery');
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.leftToRightJoined,
+                      child: const GalleryScreen(),
+                      childCurrent: this,
+                      duration: const Duration(milliseconds: 500),
+                      reverseDuration: const Duration(milliseconds: 500),
+                    ),
+                  );
                 },
                 child: Text(
                   'Gallery',
