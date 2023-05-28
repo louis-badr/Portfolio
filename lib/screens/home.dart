@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: Text(
                     'Projects',
-                    style: Theme.of(context).textTheme.displayMedium,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
               ),
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: Text(
                         'About me',
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ),
                   ),
@@ -112,14 +112,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'TITLE',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .titleSmall,
+                                            .headlineSmall,
                                       ),
                                     ),
                                     SelectableText(
                                       "Louis' Portfolio",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .displayLarge,
+                                          .headlineLarge,
                                     ),
                                   ],
                                 ),
@@ -137,14 +137,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         'DESCRIPTION',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .titleSmall,
+                                            .headlineSmall,
                                       ),
                                     ),
                                     SelectableText(
                                       'Creative technologist based in Paris - between engineering, research and design',
                                       style: Theme.of(context)
                                           .textTheme
-                                          .titleMedium,
+                                          .headlineMedium,
                                     ),
                                   ],
                                 ),
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               'LOGO',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .titleSmall,
+                                                  .headlineSmall,
                                             ),
                                           ),
                                           SizedBox(
@@ -205,14 +205,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       'CREATED BY',
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .titleSmall,
+                                                          .headlineSmall,
                                                     ),
                                                   ),
                                                   SelectableText(
                                                     'Louis BADR',
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .titleMedium,
+                                                        .headlineMedium,
                                                   ),
                                                 ],
                                               ),
@@ -239,17 +239,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             Alignment.topLeft,
                                                         child: SelectableText(
                                                           'DATE OF ISSUE',
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .titleSmall,
+                                                          style: Theme.of(
+                                                                  context)
+                                                              .textTheme
+                                                              .headlineSmall,
                                                         ),
                                                       ),
                                                       SelectableText(
                                                         currentDate,
                                                         style: Theme.of(context)
                                                             .textTheme
-                                                            .titleMedium,
+                                                            .headlineMedium,
                                                       ),
                                                     ],
                                                   ),
@@ -264,17 +264,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             Alignment.topLeft,
                                                         child: SelectableText(
                                                           'REV',
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .titleSmall,
+                                                          style: Theme.of(
+                                                                  context)
+                                                              .textTheme
+                                                              .headlineSmall,
                                                         ),
                                                       ),
                                                       SelectableText(
                                                         '0.1',
                                                         style: Theme.of(context)
                                                             .textTheme
-                                                            .titleMedium,
+                                                            .headlineMedium,
                                                       ),
                                                     ],
                                                   ),

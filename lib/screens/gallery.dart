@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/constants.dart';
 import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/widgets/background.dart';
 
@@ -40,10 +41,25 @@ class GalleryScreen extends StatelessWidget {
               },
               child: Text(
                 'Projects',
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
           ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: stdMargin * 2,
+            vertical: stdMargin,
+          ),
+          child: Column(children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                'Gallery',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+          ]),
         ),
       ]),
     );

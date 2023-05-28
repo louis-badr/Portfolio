@@ -1,9 +1,11 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/constants.dart';
 import 'package:portfolio/screens/gallery.dart';
 import 'package:portfolio/screens/home.dart';
 import 'package:portfolio/widgets/background.dart';
+import 'package:portfolio/widgets/project_card.dart';
 
 class ProjectsScreen extends StatelessWidget {
   const ProjectsScreen({super.key});
@@ -42,7 +44,7 @@ class ProjectsScreen extends StatelessWidget {
                 },
                 child: Text(
                   'Home',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
             ),
@@ -72,11 +74,44 @@ class ProjectsScreen extends StatelessWidget {
                 },
                 child: Text(
                   'Gallery',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
             ),
           ),
+          Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: stdMargin * 2,
+                vertical: stdMargin,
+              ),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Recent Projects',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.8,
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: ListView(
+                        children: [
+                          projectCard(context),
+                          projectCard(context),
+                          projectCard(context),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )),
         ],
       ),
     );

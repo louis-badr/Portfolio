@@ -24,26 +24,44 @@ class MyApp extends StatelessWidget {
           background: const Color(0xFF04071B),
         ),
         textTheme: const TextTheme(
-          displayLarge: TextStyle(
+          titleSmall: TextStyle(
+            fontSize: 20,
+            color: Color(0xFFF4EFDC),
+          ),
+          titleMedium: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFF4EFDC),
+          ),
+          titleLarge: TextStyle(
+            fontSize: 56,
+            color: Color(0xFFF4EFDC),
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 14,
+            color: Color(0xFFF4EFDC),
+          ),
+          headlineMedium: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Color(0xFFF4EFDC),
           ),
-          titleMedium: TextStyle(
-            fontSize: 14,
+          headlineLarge: TextStyle(
+            fontSize: 24,
             fontWeight: FontWeight.bold,
             color: Color(0xFFF4EFDC),
           ),
-          titleSmall: TextStyle(
+          displaySmall: TextStyle(
             fontSize: 12,
             color: Color(0xFFF4EFDC),
           ),
-          titleLarge: TextStyle(
-            fontSize: 60,
+          displayMedium: TextStyle(
+            fontSize: 18,
             color: Color(0xFFF4EFDC),
           ),
-          displayMedium: TextStyle(
-            fontSize: 14,
+          displayLarge: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
             color: Color(0xFFF4EFDC),
           ),
         ),
