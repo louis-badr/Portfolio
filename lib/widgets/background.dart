@@ -9,7 +9,7 @@ class BottomRightBackground extends CustomPainter {
     final double hLineLength = size.width - margin;
     final double markLength = margin / 2;
     final double rulesSpacing = hLineLength / (marksNb + 1);
-    final int vMarksNb = (vLineLength % rulesSpacing).toInt();
+    final int vMarksNb = vLineLength ~/ rulesSpacing;
 
     Paint borders = Paint()
       ..color = const Color(0xFFF4EFDC)
