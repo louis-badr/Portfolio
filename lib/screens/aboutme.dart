@@ -51,11 +51,31 @@ class AboutMeScreen extends StatelessWidget {
               horizontal: stdMargin * 2,
               vertical: stdMargin,
             ),
-            child: Column(
+            child: Stack(
               children: [
-                Text(
+                SelectableText(
                   'About Me',
                   style: Theme.of(context).textTheme.titleLarge,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        width: 400,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SelectableText(
+                              "My name is Louis\n\nI do a bit of everything from mechanics to electronics, programming and manufacturing, combining it with scientific research, user experience and art.\n\nI'm currently looking for a PhD position in the field of Human-Computer Interaction and haptics.\n\nContact me at: louis.badr@edu.devinci.fr",
+                              style: Theme.of(context).textTheme.headlineLarge,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

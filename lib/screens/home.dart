@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:portfolio/constants.dart';
 import 'package:portfolio/screens/aboutme.dart';
 import 'package:portfolio/screens/projects.dart';
 import 'package:portfolio/widgets/background.dart';
@@ -27,67 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
               painter: BottomRightBackground(),
               size: const Size(double.infinity, double.infinity),
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Transform.rotate(
-                angle: -90 * math.pi / 180,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(
-                      color: Color(0xFF2E45ED),
-                      width: 2,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.leftToRightJoined,
-                        child: const ProjectsScreen(),
-                        childCurrent: widget,
-                        duration: const Duration(milliseconds: 500),
-                        reverseDuration: const Duration(milliseconds: 500),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Projects',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                ),
-              ),
-            ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(stdMargin),
               child: Stack(
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        side: const BorderSide(
-                          color: Color(0xFF2E45ED),
-                          width: 2,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.topToBottomJoined,
-                            child: const AboutMeScreen(),
-                            childCurrent: widget,
-                            duration: const Duration(milliseconds: 500),
-                            reverseDuration: const Duration(milliseconds: 500),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        'About me',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                    ),
-                  ),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: SizedBox(
@@ -291,6 +235,74 @@ class _HomeScreenState extends State<HomeScreen> {
                             ]),
                           ]),
                     ),
+                  ),
+                  Column(
+                    children: [
+                      OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          side: const BorderSide(
+                            color: Color(0xFF2E45ED),
+                            width: 2,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.topToBottomJoined,
+                              child: const AboutMeScreen(),
+                              childCurrent: widget,
+                              duration: const Duration(milliseconds: 500),
+                              reverseDuration:
+                                  const Duration(milliseconds: 500),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'About me',
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Transform.rotate(
+                              angle: -90 * math.pi / 180,
+                              child: OutlinedButton(
+                                style: OutlinedButton.styleFrom(
+                                  side: const BorderSide(
+                                    color: Color(0xFF2E45ED),
+                                    width: 2,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type:
+                                          PageTransitionType.leftToRightJoined,
+                                      child: const ProjectsScreen(),
+                                      childCurrent: widget,
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      reverseDuration:
+                                          const Duration(milliseconds: 500),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  'Projects',
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
