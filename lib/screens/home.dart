@@ -29,7 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
               size: const Size(double.infinity, double.infinity),
             ),
             Padding(
-              padding: const EdgeInsets.all(stdMargin),
+              padding: const EdgeInsets.only(
+                top: stdMargin,
+                bottom: stdMargin,
+                right: stdMargin,
+              ),
               child: Stack(
                 children: [
                   Align(
